@@ -26,7 +26,7 @@ public class CenteredToolbar extends Toolbar {
 
     public CenteredToolbar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
+        
         titleView = new TextView(getContext());
 
         int textAppearanceStyleResId;

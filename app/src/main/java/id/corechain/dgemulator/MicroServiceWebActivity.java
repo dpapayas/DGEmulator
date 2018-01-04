@@ -30,7 +30,7 @@ public class MicroServiceWebActivity extends AppCompatActivity {
         webView = (WebView)findViewById(R.id.webView);
 
         Intent intent = getIntent();
-        String url = intent.getStringExtra("url").replace("app", "https");
+        String url = intent.getStringExtra("url").replace("app", "http");
 
         WebViewViewer.ViewURL(webView, url);
 
@@ -47,7 +47,7 @@ public class MicroServiceWebActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case android.R.id.home:
-                intent = new Intent(MicroServiceWebActivity.this, DashboardActivity.class);
+                intent = new Intent(MicroServiceWebActivity.this, ScanQRActivity.class);
                 startActivity(intent);
                 finish();
                 break;

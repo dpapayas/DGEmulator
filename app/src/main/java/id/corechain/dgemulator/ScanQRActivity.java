@@ -86,8 +86,6 @@ public class ScanQRActivity extends AppCompatActivity implements ZXingScannerVie
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_chevron_left);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("DG Emulator");
 
         List<BarcodeFormat> formats = new ArrayList<>();
@@ -103,21 +101,6 @@ public class ScanQRActivity extends AppCompatActivity implements ZXingScannerVie
         mScannerView.setFormats(formats);
         contentFrame.addView(mScannerView);
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -139,8 +122,11 @@ public class ScanQRActivity extends AppCompatActivity implements ZXingScannerVie
 
         if (rawResult.toString().startsWith("app://")) {
 
-            Intent intent = new Intent(getApplicationContext(), MicroServiceWebActivity.class);
-            intent.putExtra("url", rawResult.toString());
+//            Intent intent = new Intent(getApplicationContext(), MicroServiceWebActivity.class);
+//            intent.putExtra("url", rawResult.toString());
+//            startActivity(intent);
+
+            Intent intent = new Intent(getApplicationContext(), AmountActivity.class);
             startActivity(intent);
         }
 

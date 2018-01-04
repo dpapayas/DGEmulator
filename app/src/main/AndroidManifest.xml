@@ -36,6 +36,9 @@
         <activity
             android:name=".InfoMicroAppActivity"
             android:theme="@style/MyMaterialTheme.Base"></activity>
+        <activity android:name=".AmountActivity"></activity>
+        <activity android:name=".ConfirmActivity"></activity>
+
         <service android:name="org.eclipse.paho.android.service.MqttService" >
         </service>
     </application>
