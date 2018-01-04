@@ -41,6 +41,8 @@ import java.util.List;
 
 import id.corechain.dgemulator.R;
 import id.corechain.dgemulator.barcode.ZXingScannerView;
+import in.digiro.core.Keypairs;
+import in.digiro.core.Peer;
 
 
 /**
@@ -53,10 +55,13 @@ public class ScanQRActivity extends AppCompatActivity implements ZXingScannerVie
 
     private ZXingScannerView mScannerView;
 
+    private void initWallet(){
+        Peer peer = new Peer(new Keypairs(), getApplicationContext());
+    }
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
-
+        initWallet();
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
