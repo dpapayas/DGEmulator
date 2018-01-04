@@ -38,6 +38,7 @@
             android:theme="@style/MyMaterialTheme.Base"></activity>
         <activity android:name=".AmountActivity"></activity>
         <activity android:name=".ConfirmActivity"></activity>
+        <activity android:name=".ReceiptActivity"></activity>
 
         <service android:name="org.eclipse.paho.android.service.MqttService" >
         </service>
